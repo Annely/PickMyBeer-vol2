@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once('sisu.php');
+session_start();
 connect_db();
 
 $page="login";

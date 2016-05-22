@@ -26,11 +26,11 @@ function logi(){
 		  	} else {
 		  		
 		  		global $connection;
-		  		$user = mysqli_real_escape_string($connection, $_POST["user"]);
-		  		$pass = mysqli_real_escape_string($connection, $_POST["pass"]);
+		  		$user = mysqli_real_escape_string($link, $_POST["user"]);
+		  		$pass = mysqli_real_escape_string($link, $_POST["pass"]);
 		  		
 				$query = "SELECT id FROM annely_kasutajad WHERE user='$user' && pass=SHA1('$pass')";
-				$result = mysqli_query($connection, $query) or die("midagi läks valesti");
+				$result = mysqli_query($link, $query) or die("midagi läks valesti");
 			
 				
 				$ridu = mysqli_num_rows($result);
