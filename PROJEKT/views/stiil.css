@@ -2,7 +2,7 @@ body {
 	background: white;
 	margin:0px;
 }
-#wrap {
+.wrap {
 	width:800px;
 	background: white;
 	margin: auto;
@@ -11,7 +11,7 @@ body {
 }
 #menu {
 	list-style: none;
-	background: blue;
+	background: #C8C8A9;
 	margin: 0px;
 	padding: 0px;
 	text-align: center;
@@ -28,10 +28,10 @@ body {
 	background: Aquamarine;
 	color: DarkSlateGray;
 }
-#content {
+.content {
 	padding:10pt;
 }
-login{
+.login{
 	margin:auto;
 	width: 35%;	
 	margin-top:25%;
@@ -39,8 +39,8 @@ login{
 
 th, td {
     padding: 15px;
-    text-align: left;
-    background-color:white;
+    text-align: center;
+    background-color:red;
 }
 	
 
