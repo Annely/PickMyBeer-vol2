@@ -49,6 +49,19 @@ function test(){
 function tagasiside(){
 	include_once('tagasiside.html');
 	}
+
+function tulemused(){
+	global $link;
+		$olled = array();
+		$sql = "SELECT * FROM annely_olled ORDER BY RAND() LIMIT 1";
+		$result = mysqli_query($link, $sql);
+		while ($r=mysqli_fetch_assoc($result)){
+		$olled[]=$r;
+	};
+	return $olled;
+
+	include_once('tulemused.php');
+	}
 	
 function registreeri(){
 	global $link;
@@ -85,13 +98,5 @@ function registreeri(){
 	
 	}}include_once('registreeri.php');}
 	
-function arvuta_tulemused() {
-	if(! empty($_POST)){
-    $answers = array();
-    for($i=1;!empty($_POST["v$i"]);++$i)
-    {
-        $answers[$_POST["v$i"]][] = $i;
-        }
-    }
-    print_r($answers);}
+
 ?>

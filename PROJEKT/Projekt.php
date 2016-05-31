@@ -24,18 +24,14 @@ switch($page){
 		tagasiside();
 	break;
 	case "tulemused":
-		arvuta_tulemused();
+		tulemused();
 	break;
 	case "logout":
 		$_SESSION = array();
 		session_destroy();
 		header("Location: ?");	
 	break;
-	case "tulemused":
-		arvuta_tulemused();
-	
-
-}
+	}
 
 include_once('foot.html');
 

@@ -1,5 +1,5 @@
 body {
-	background: white;
+	background: gray;
 	margin:0px;
 }
 #wrap {
@@ -42,5 +42,6 @@ th, td {
     text-align: left;
     background-color:white;
 }
+
 	
 
