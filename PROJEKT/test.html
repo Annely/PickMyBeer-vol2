@@ -1,15 +1,15 @@
-<form method="post" action="?page=tulemused.php">	
-	<table class="test">
-		<caption >Suur õlletest</caption>
+<form method="post" action="?page=tulemused.html">
+	<table class="center">
+		<caption>Suur õlletest</caption>
 		<tr>
 			<th>
 				Väljas võib küll sadada lumi, kuid mis aastaaega väjendab hetkel sinu meeleolu?
 			</th></tr><tr>
 			<td>
-				<input type="radio" name="v1[]" id="olu" value="2">Kevad<br>
-				<input type="radio" name="v1[]" id="olu" value="5">Suvi<br>
-				<input type="radio" name="v1[]" id="olu" value ="7">Sügis<br>
-				<input type="radio" name="v1[]" id="olu" value ="8">Talv<br>
+				<input type="radio" name="v1[]" value="2" required >Kevad<br>
+				<input type="radio" name="v1[]"  value="5">Suvi<br>
+				<input type="radio" name="v1[]"  value ="7">Sügis<br>
+				<input type="radio" name="v1[]"  value ="8">Talv<br>
 			</td>				
 		</tr>
 		<tr>
@@ -17,10 +17,10 @@
 				Mis täna plaanis?
 			</th></tr><tr>
 			<td>
-				<input type="radio" name="v2[]" id="olu" value ="2">Pildituks<br>
-				<input type="radio" name="v2[]" id="olu" value ="7">Tüdrukutega<br>
-				<input type="radio" name="v2[]" id="olu" value ="5">Kuttidega<br>
-				<input type="radio" name="v2[]" id="olu" value ="8">Kodus koos kassiga<br>
+				<input type="radio" name="v2[]"  value ="2" required >Pildituks<br>
+				<input type="radio" name="v2[]" value ="7">Tüdrukutega<br>
+				<input type="radio" name="v2[]"  value ="5">Kuttidega<br>
+				<input type="radio" name="v2[]" value ="8">Kodus koos kassiga<br>
 			</td>					
 		</tr>
 		<tr>
@@ -28,10 +28,10 @@
 				Millist neist eelistad?
 			</th></tr><tr>
 			<td>
-				<input type="radio" name="v3[]" id="olu" value ="8">Valge poolkuiv vein<br>
-				<input type="radio" name="v3[]" id="olu" value ="2">Värvilised kokteilid<br>
-				<input type="radio" name="v3[]" id="olu" value ="5">Ainult õlu mulle, aitäh<br>
-				<input type="radio" name="v3[]" id="olu" value ="7">Viski jääga<br>
+				<input type="radio" name="v3[]" value ="8" required >Valge poolkuiv vein<br>
+				<input type="radio" name="v3[]"  value ="2">Värvilised kokteilid<br>
+				<input type="radio" name="v3[]"  value ="5">Ainult õlu mulle, aitäh<br>
+				<input type="radio" name="v3[]"  value ="7">Viski jääga<br>
 			</td>					
 		</tr>
 		<tr>
@@ -39,10 +39,10 @@
 				Mis tuju sul hetkel on?
 			</th></tr><tr>
 			<td>
-				<input type="radio" name="v4[]" id="olu" value ="2">Väga hea<br>
-				<input type="radio" name="v4[]" id="olu" value ="5">Kehvapoolne<br>
-				<input type="radio" name="v4[]" id="olu" value ="7">Meh..<br>
-				<input type="radio" name="v4[]" id="olu" value ="8">Hoia parem eemale<br>
+				<input type="radio" name="v4[]" value ="2" required >Väga hea<br>
+				<input type="radio" name="v4[]"  value ="5">Kehvapoolne<br>
+				<input type="radio" name="v4[]"  value ="7">Meh..<br>
+				<input type="radio" name="v4[]"  value ="8">Hoia parem eemale<br>
 			</td>					
 		</tr>
 		<tr>
@@ -50,10 +50,10 @@
 				Mille järgi isutab?
 			</th></tr><tr>
 			<td>
-				<input type="radio" name="v5[]" id="olu" value ="2">Puuviljasalat<br>
-				<input type="radio" name="v5[]" id="olu" value ="8">Küüslauguleivad<br>
-				<input type="radio" name="v5[]" id="olu" value ="5">Sushi<br>
-				<input type="radio" name="v5[]" id="olu" value ="7">Shokolaadikook<br>
+				<input type="radio" name="v5[]"  value ="2" required>Puuviljasalat<br>
+				<input type="radio" name="v5[]"  value ="8">Küüslauguleivad<br>
+				<input type="radio" name="v5[]"  value ="5">Sushi<br>
+				<input type="radio" name="v5[]"  value ="7">Shokolaadikook<br>
 			</td>					
 		</tr>
 		<tr>
@@ -61,19 +61,19 @@
 				Vali lemmikstaar
 			</th></tr><tr>
 			<td>
-				<input type="radio" name="v6[]" id="olu" value ="2">Andrus Veerpalu<br>
-				<input type="radio" name="v6[]" id="olu" value ="5">Edgar Savisaar<br>
-				<input type="radio" name="v6[]" id="olu" value ="8">Liis Lemsalu<br>
-				<input type="radio" name="v6[]" id="olu" value ="7">Anu Saagim<br>
+				<input type="radio" name="v6[]"  value ="2" required>Andrus Veerpalu<br>
+				<input type="radio" name="v6[]"  value ="5">Edgar Savisaar<br>
+				<input type="radio" name="v6[]"  value ="8">Liis Lemsalu<br>
+				<input type="radio" name="v6[]" value ="7">Anu Saagim<br>
 			</td>					
 		</tr>
 		
 		<tr>
 			<td colspan="2">
-				<button type="submit" align=center>Vaata tulemust</button>
-				
+				<button type="submit" onclick="insert();">Vaata tulemust</button>	
 			</td>
 		</tr>
 		</table>
 		
 	</form>
+<p id="tulem"></p>

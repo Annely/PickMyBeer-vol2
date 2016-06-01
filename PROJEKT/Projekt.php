@@ -28,10 +28,12 @@ switch($page){
 	break;
 	case "logout":
 		$_SESSION = array();
+		session_start();
 		session_destroy();
+		$_SESSION = array();
 		header("Location: ?");	
 	break;
-	}
+	};
 
 include_once('foot.html');
 

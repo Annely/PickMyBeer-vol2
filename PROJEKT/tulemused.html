@@ -1,0 +1,58 @@
+<p id="tulem"></p>
+
+<script>
+var numbrid =[];
+
+var esimene =$('input:radio[name=v1]:checked').val();
+var teine =$('input:radio[name=v2]:checked').val();
+var kolmas =$('input:radio[name=v3]:checked').val();
+var neljas =$('input:radio[name=v4]:checked').val();
+var viies =$('input:radio[name=v5]:checked').val();
+var kuues =$('input:radio[name=v6]:checked').val());
+
+function insert() {
+numbrid.push(esimene.value, teine.value, kolmas.value, neljas.value, viies.value, kuues.value);
+modeArray();
+}
+
+function modeArray(numbrid)
+{
+        
+    var modeMap = {},
+        maxCount = 1, 
+        modes = [numbrid[0]];
+
+    for(var i = 0; i < numbrid.length; i++)
+    {
+        var el = numbrid[i];
+
+        else
+            modeMap[el]++;
+
+        if (modeMap[el] > maxCount)
+        {
+            modes = [el];
+            maxCount = modeMap[el];
+        }
+        else if (modeMap[el] == maxCount)
+        {
+            modes.push(el);
+            maxCount = modeMap[el];
+        }
+    }
+    return modes;
+    display();
+}
+function display(modes); {
+var tekst="";
+var i;
+for (i=0; i<modes.length; i++) {
+	text += modes(i);
+}
+document.getElementById("tulem").innerHTML = text;
+return false;
+}
+</script>
+
+<h1> Sinule soovitame õlleks <?php $olled ?> <h1>
+

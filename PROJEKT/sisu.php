@@ -16,31 +16,32 @@ function logi(){
 	if(!empty($_POST)){
 		$errors=array();
 		if (empty($_POST['username'])){
-			$errors[]="Sisesta kasutajanimi";
+			$errors[]="kasutajanimi vajalik!";
 		}
 		if (empty($_POST['passwd'])){
-			$errors[]="Sisesta ka parool";
+			$errors[]="parool vajalik!";
 		}
 		
 		if (empty($errors)){
 			// turva
-			$user= mysqli_real_escape_string($link,$_POST['username']);
-			$pass= mysqli_real_escape_string($link,$_POST['passwd']);
+			$user=mysqli_real_escape_string($link,$_POST['username']);
+			$pass=mysqli_real_escape_string($link,$_POST['passwd']);
 			
-			$sql="SELECT id, user FROM annely_kasutajad WHERE user = '$user' AND pass = SHA1('$pass')";
+			$sql="SELECT user FROM annely_kasutajad WHERE user = '$user' AND pass = SHA1('$pass')";
 			$result = mysqli_query($link, $sql);
 			if ($result && $user = mysqli_fetch_assoc($result)){ 
-				// kõik ok, muutjas $user on massiiv
-				$_SESSION['user']=$user; // $_SESSION['user']['id']
+				// k?µik ok, muutjas $user on massiiv
+				$_SESSION['user']=$user; // $_SESSION['user'
 				$_SESSION['message']="Login õnnestus";
-				header("Location: test");
+				header("Location: ?");
 				exit(0);
 			} else {
-				$errors[]="Midagi läks valesti! Kas oled ikka registreeritud?";
+				$errors[]="Midagi läks valesti, kas oled ikka registreeritud?";
 			}
 		}
 	}
-	include("test.html");}
+
+	include_once("login.php");}
 	
 function test(){
 	include_once('test.html');
@@ -51,16 +52,16 @@ function tagasiside(){
 	}
 
 function tulemused(){
-	global $link;
+	/*global $link;
 		$olled = array();
 		$sql = "SELECT * FROM annely_olled ORDER BY RAND() LIMIT 1";
 		$result = mysqli_query($link, $sql);
 		while ($r=mysqli_fetch_assoc($result)){
 		$olled[]=$r;
 	};
-	return $olled;
+	return $olled;*/
 
-	include_once('tulemused.php');
+	include_once('tulemused.html');
 	}
 	
 function registreeri(){
@@ -87,7 +88,7 @@ function registreeri(){
 			$sql="INSERT INTO annely_kasutajad (user, pass) VALUES ('$user', SHA1('$pass'))";
 			$result= mysqli_query($link, $sql);
 			if ($result){
-				$_SESSION['message']="Registreerumine õnnestus";
+				$_SESSION['message']="Registreerumine õnnestus! Palun logi sisse!";
 				header("Location: ?");
 				exit(0);
 			}else {

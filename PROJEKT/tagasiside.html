@@ -1,5 +1,19 @@
+<h2 id="thanks" align=center></h2>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("table").toggle();
+        var text ="Aitäh! Kohtume homme õhtul jälle?";
+         
+       document.getElementById("thanks").innerHTML = text;
+return false; 
+    });
+});
+</script>
 <form action="?page=tagasiside" method="POST">
-<table class="tagasiside">
+<table class="center">
 		<caption>Palume sinu tagasisidet</caption>
 		<tr>
 			<th>
