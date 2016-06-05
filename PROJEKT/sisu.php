@@ -33,7 +33,7 @@ function logi(){
 				// k?µik ok, muutjas $user on massiiv
 				$_SESSION['user']=$user; // $_SESSION['user'
 				$_SESSION['message']="Login õnnestus";
-				header("Location: ?");
+				header("Location: ?page=test");
 				exit(0);
 			} else {
 				$errors[]="Midagi läks valesti, kas oled ikka registreeritud?";
@@ -83,7 +83,7 @@ function registreeri(){
 		}
 		if(empty($errors)){
 			$user=mysqli_real_escape_string($link,$_POST['username']);
-			$pass=mysqli_real_escape_string($link,$_POST['passw']);
+			$pass=mysqli_real_escape_string($link,$_POST['passwd']);
 			
 			$sql="INSERT INTO annely_kasutajad (user, pass) VALUES ('$user', SHA1('$pass'))";
 			$result= mysqli_query($link, $sql);

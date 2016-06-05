@@ -10,12 +10,14 @@
 <body>
 <div id="wrap">
 	<ul id="menu">
+		<?php if(empty($_SESSION['user'])): ?>
 			<li><a href="?page=registreeri">Registreeri</a></li>
 			<li><a href="?">Logi sisse</a></li>
+		<?php else: ?>
 			<li><a href="?page=test">Test</a></li>
 			<li><a href="?page=tagasiside">Tagasiside</a></li>
 			<li><a href="?page=logout">Logi välja</a></li>
-
+		<?php endif;?>
 	</ul>
 	<div id="content">
 	
